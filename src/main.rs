@@ -7,6 +7,8 @@ extern crate redis;
 extern crate dotenv_codegen;
 
 mod database;
+mod model;
+mod controller;
 
 #[get("/")]
 fn index() -> &'static str {
