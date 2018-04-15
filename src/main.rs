@@ -6,10 +6,12 @@ extern crate rocket_contrib;
 #[macro_use] extern crate serde_derive;
 #[macro_use] extern crate dotenv_codegen;
 #[macro_use] extern crate log;
+extern crate rocket_cors;
 
 mod model;
 mod controller;
 mod database;
+mod security;
 
 use model::ShoppingList;
 use rocket_contrib::Json;
@@ -63,6 +65,9 @@ fn parse_to_json(shopping_list: Option<ShoppingList>) -> Option<Json<ShoppingLis
 }
 
 fn main() {
-    rocket::ignite().mount("/", routes![index, save, get, delete, find_all, find_by_pattern]).launch();
+    rocket::ignite()
+        .mount("/", routes![index, save, get, delete, find_all, find_by_pattern])
+        .attach(security::get_cors())
+        .launch();
 }
 
