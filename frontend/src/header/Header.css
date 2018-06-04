@@ -1,0 +1,13 @@
+.App-header {
+  background-color: #4A4A4A;
+  height: 40px;
+  top:0px;
+  left:0px;
+  color: white;
+  position: fixed;
+  width: 100%;
+}
+
+.App-title {
+  font-size: 1.5em;
+}

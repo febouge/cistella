@@ -1,0 +1,10 @@
+.Sidebar {
+  height: 100%;
+  width: 200px;
+  position: fixed;
+  top: 60px;
+  bottom: 60px;
+  left: 0;
+  background-color: #3D9970;
+  overflow-x: hidden;
+}
